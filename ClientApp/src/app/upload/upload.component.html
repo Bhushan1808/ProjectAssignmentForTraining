@@ -1,0 +1,38 @@
+<div class="box1">
+    
+
+    <form #uploadForm="ngForm" (ngSubmit)="uploadData(uploadForm.value)">
+        <h1>
+            New Registration
+        </h1><hr><br>
+        <div class="ipFields">
+
+            <input type="file" ngModel name="uploadedFile" (change)="checkFileFormat($event)" accept=".xlsx" />
+            
+            <div *ngIf="span else elseBlock">
+                <span >
+                    (Only Accepts word file)
+                </span>
+            </div>
+            
+            <ng-template #elseBlock>
+                <div *ngIf="firstReq else elseBlock2">
+                    <span style="color:blue">
+                        (Upload Your File)
+                    </span>
+                </div>
+                <ng-template #elseBlock2>
+
+                    <span style="color: greenyellow;">(Ready To Upload)</span>
+                </ng-template>
+            </ng-template>
+            <br>
+        </div>
+        <div class="ipFields">
+
+            <label>Employee Name :</label>
+            <input type="text" ngModel name="devName"><br>
+        </div>
+        <button type="submit" >Register</button>
+    </form>
+</div>

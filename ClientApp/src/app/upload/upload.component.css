@@ -1,0 +1,21 @@
+.box1{
+    position: static;
+    border: 2px solid black;
+    display: block;
+    margin: 10px;
+}
+form{
+    
+    text-align: center;
+}
+
+.ipFields{
+    margin: 10px;
+}
+
+button{
+    margin: 10px;
+}
+span{
+    color: red;
+}

@@ -1,0 +1,51 @@
+<table class="mainTable">
+    <thead>
+        <th>
+            Name
+        </th>
+        <th>
+            FileData
+            <button (click)="toggleChange()">+</button>
+
+        </th>
+        <th>
+            CurrentTimeStamp
+        </th>
+        <th>
+            CurrentTimeZone
+        </th>
+        <th>
+            User/BrowserInfo
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of jsonData">
+            <td>
+                {{row.name}}
+            </td>
+            <td>
+                <div *ngIf="toggle else elseBlock">
+                    <table>
+                        <tr *ngFor="let items of row.file">
+                            <td>
+                                {{items | objectToString}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <ng-template #elseBlock>
+
+                </ng-template>
+            </td>
+            <td>
+                {{row.currentTimeStamp}}
+            </td>
+            <td>
+                {{row.currentTimeZone}}
+            </td>
+            <td>
+                {{row.userInfo}}
+            </td>
+        </tr>
+    </tbody>
+</table>
